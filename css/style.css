@@ -313,11 +313,14 @@ img{
 }
 
 .socials {
+  background-color: #272727;
   padding: 20px 0;
+  margin: 10px 0;
+  color: #fff;
 }
 .social__title {
   font-weight: 400;
-  font-size: 38px;
+  font-size: 32px;
   letter-spacing: 0.03em;
 }
 .social__slider {
@@ -328,6 +331,22 @@ img{
   object-fit: cover;
 }
 .social__item {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
 }
 .social__link {
+}
+.slick-dots{
+  bottom: -15px;
+}
+.slick-dots li button::before{
+  font-size: 22px;
+  color: #656565;
+  transition: all .5s ease-in-out;
+}
+.slick-dots li.slick-active button:before {
+  transform: scale(1.5);
+  opacity: 1;
+  color: #fff;
 }
