@@ -1,9 +1,18 @@
+*{
+  scroll-behavior: smooth;
+}
+.no-scroll {
+  overflow: hidden;
+}
 body{
   font-family: 'Forum', cursive;
   background-color: #E5E5E5;
 }
 img{
   width: 100%;
+}
+input{
+  outline: none;
 }
 .header {
   padding: 10px 0;
@@ -22,6 +31,41 @@ img{
 }
 .container {
   padding: 0 15px;
+}
+.header__menu{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: -100%;
+  background-color: #272727;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease-in-out;
+}
+.menu__active{
+  left: 0;
+}
+.menu__list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.menu__item{
+  list-style: none;
+}
+.menu__link{
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 .header__top {
   display: flex;
@@ -77,6 +121,8 @@ img{
   width: 20px;
   height: 20px;
   position: relative;
+  cursor: pointer;
+  z-index: 1;
 }
 .burger__btn span,
 .burger__btn span::before,
@@ -349,4 +395,132 @@ img{
   transform: scale(1.5);
   opacity: 1;
   color: #fff;
+}
+
+.contacts {
+  padding: 20px 15px;
+}
+.contacts__bg-img {
+}
+.contacts__info-box:first-child{
+  margin-bottom: 25px;
+}
+.contacts__info-box {
+  text-align: center;
+}
+.info-box__title {
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.info-box__phone{
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 28px;
+  color: #959595;
+}
+.info-box__phone a{
+  text-decoration: none;
+  color: inherit;
+}
+.info-box__form input{
+  width: 100%;
+  border: none;
+  border-bottom: solid 1.5px #272727;
+  background-color: transparent;
+  padding: 10px 0;
+}
+.info-box__form{
+  position: relative;
+}
+.info-box__form::after{
+  content: '→';
+  position: absolute;
+  top: 7px;
+  right: 0;
+  font-size: 22px;
+  color: #272727;
+}
+.info-box__form input::placeholder{
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.info-box__form input:focus{
+  outline: none;
+  color: inherit;
+}
+
+.footer {
+  background-color: #272727;
+  padding: 25px 0;
+  color: #fff;
+}
+.footer__menu {
+  margin-bottom: 25px;
+}
+.footer__menu-list {
+  display: flex;
+  font-size: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  gap: 20px;
+}
+.footer__menu-icon {
+  list-style: none;
+}
+.menu-link {
+  text-decoration: none;
+  color: inherit;
+}
+.footer__info {
+  text-align: center;
+}
+.footer .logo {
+  width: 80%;
+}
+.footer__info-wrap {
+  padding: 20px 0; 
+}
+.footer .info-box__phone a{
+  color: #c2c2c2;
+}
+.footer .info-box__form input{
+  border-bottom: solid 1.5px #fff;
+}
+.footer .info-box__form::after{
+  color: #fff;
+}
+.footer .info-box__form input::placeholder{
+  color: #c2c2c2;
+}
+.download__box {
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+}
+.download__link{
+  max-width: 90px;
+}
+.back-to-top{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ededed;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1;
+  transition: 0.3s all ease-in-out;
+}
+.back-to-top svg path{
+  fill: #48555B;
 }
