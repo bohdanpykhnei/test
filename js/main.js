@@ -38,7 +38,7 @@ window.onscroll = function () {
   if (window.pageYOffset > 580) {
     toTopBtn.style.bottom = "30px"
   } else {
-    toTopBtn.style.bottom = "-40px"
+    toTopBtn.style.bottom = "-50px"
   }
 }
 toTopBtn.addEventListener("click", function () {
