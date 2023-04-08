@@ -11,9 +11,6 @@ body{
 img{
   width: 100%;
 }
-input *{
-  -webkit-appearance: none;
-}
 .header {
   padding: 10px 0;
   position: relative;
@@ -223,7 +220,6 @@ input *{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 10px;
   color: #fff;
   position: relative;
 }
@@ -254,10 +250,16 @@ input *{
   line-height: 71px;
   letter-spacing: 0.03em;
 }
-
+.card-title::after{
+  content: "";
+  display: block;
+  width: 130px;
+  height: 1px;
+  border-bottom: solid 1px #fff;
+  margin: 0 auto;
+}
 .on-the-map {
   color: #fff;
-  margin-bottom: 10px;
 }
 .search-box {
   background-color: #272727;
@@ -305,9 +307,6 @@ input *{
   width: 100%;
   height: 100vw;
 }
-
-.shop {
-}
 .shop__list {
   display: flex;
   flex-wrap: wrap;
@@ -353,17 +352,18 @@ input *{
   letter-spacing: 0.03em;
   color: #E2B67A;
 }
-.big-item{
+.card5  .product-title, .card5 .product-subtitle{
+  color: #fff;
+}
+.card5{
   background-image: url(../images/product5.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
 }
-
 .socials {
   background-color: #272727;
   padding: 20px 0;
-  margin: 10px 0;
   color: #fff;
 }
 .social__title {
@@ -373,6 +373,8 @@ input *{
 }
 .social__slider {
   padding: 20px 0;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .slider-img {
   height: 100vw;
@@ -382,8 +384,6 @@ input *{
   display: flex;
   justify-content: center;
   column-gap: 20px;
-}
-.social__link {
 }
 .slick-dots{
   bottom: -15px;
@@ -555,6 +555,52 @@ input *{
   .footer__info-wrap{
     width: 280px;
   }
+  .slider-img{
+    height: 50vw;
+  }
+  .shop__list{
+    gap: 5px;
+    justify-content: space-around;
+  }
+  .shop__list-item{
+    width: 49%;
+  }
+  .product-link{
+    height: 65vw;
+    max-height: 360px;
+  }
+  .card5{
+    width: 100%;
+  }
+  .benefits{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    padding: 10px 0;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .benefits__card{
+    width: 49%;
+    height: 50vw;
+    max-height: 587px;
+  }
+  .card-link{
+    font-size: 16px;
+  }
+  .card-title{
+    font-size: 28px;
+    line-height: 60px;
+  }
+  .shop{
+    padding: 10px 0;
+  }
+}
+@media (min-width: 675px){
+  .shop__list{
+    gap: 10px;
+  }
 }
 @media (min-width: 768px){
   .contacts__bg-img{
@@ -566,7 +612,7 @@ input *{
   }
   .contacts{
     display: flex;
-    padding: 30px 0;
+    padding: 0;
   }
   .contacts__info{
     padding: 50px 0;
@@ -574,6 +620,20 @@ input *{
   }
   .contacts__info-box:first-child {
     margin-bottom: 60px;
+  }
+  .slider-img{
+    height: 30vw;
+  }
+  .on-the-map{
+    display: flex;
+    height: 400px;
+  }
+  .map-box{
+    width: 50%;
+    height: 100%;
+  }
+  .search-box{
+    width: calc(50% - 80px);
   }
 }
 @media (min-width: 920px){
@@ -596,11 +656,139 @@ input *{
   .footer__menu-list{
     justify-content: space-between;
   }
-}@media (min-width: 1024px){
+}
+@media (min-width: 1024px){
   .footer {
     padding: 80px 0;
   }
   .footer__menu {
     margin-bottom: 90px;
+  }
+  .contacts__info{
+    padding: 80px 0;
+    width: 280px;
+  }
+  .slider-img{
+    height: 300px;
+  }
+  .shop{
+    padding: 20px 0;
+  }
+  .on-the-map{
+    margin: 0;
+  }
+  .shop__list{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  }
+  .shop__list-item{
+    width: 100%;
+  }
+  .card5 .product-link{
+    max-height: 780px;
+    height: 100%;
+  }
+  .card1 { grid-area: 1 / 1 / 2 / 2; }
+  .card2 { grid-area: 1 / 3 / 2 / 4; }
+  .card3 { grid-area: 2 / 1 / 3 / 2; }
+  .card4 { grid-area: 2 / 3 / 3 / 4; }
+  .card5 { grid-area: 1 / 2 / 3 / 3; }
+  .search-box {
+    width: calc(50% - 200px);
+    padding: 100px 100px;
+  }
+  .on-the-map{
+    height: 500px;
+  }
+  .card-link{
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .card-title{
+    font-size: 64px;
+    line-height: 71px;
+    margin-bottom: 23px;
+  }
+  .card-title::after{
+    margin: 23px auto 0;
+  }
+  .benefits{
+    padding: 20px 0;
+  }
+}
+@media (min-width: 1200px){
+  .contacts__info{
+    padding: 180px 0;
+  }
+  .info-box__title{
+    margin-bottom: 30px;
+  }
+  .contacts__info-box:first-child{
+    margin-bottom: 110px;
+  }
+  .slider-img{
+    height: 25vw;
+  }
+  .back-to-top{
+    right: 40px;
+  }
+  .socials{
+    padding: 100px 0;
+    margin: 0;
+  }
+  .social__item{
+    justify-content: start;
+  }
+  .social__title{
+    margin-bottom: 80px;
+  }
+  .slick-dotted.slick-slider {
+    margin-bottom: 60px;
+  }
+  .slick-slide{
+    margin: 0 10px;
+  }
+  .slick-dots{
+    width: 160px;
+    bottom: -90px;
+    right: 260px;
+  }
+  .slick-arrow{
+    top: auto;
+    bottom: -127px;
+    width: 50px;
+    height: 50px;
+  }
+  .slick-prev{
+    left: auto;
+    right: 452px;
+  }
+  .slick-next{
+    right: 174px;
+  }
+  .slick-prev:before, .slick-next:before{
+    font-size: 50px;
+  }
+  .search-box {
+    width: calc(50% - 320px);
+    padding: 170px 160px;
+  }
+  .on-the-map{
+    height: 600px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .benefits{
+    padding: 20px 0;
+  }
+}
+@media (min-width: 1440px){
+  .slider-img{
+    height: 385px;
   }
 }

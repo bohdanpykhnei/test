@@ -90,5 +90,7 @@ hr {
 }
 
 input, select {
-    vertical-align:middle;
+    vertical-align: middle;
+    border-radius: 0;
+    -webkit-appearance: none;
 }

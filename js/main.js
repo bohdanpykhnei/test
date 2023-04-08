@@ -12,13 +12,18 @@ function open(e) {
   sideBar.classList.toggle("menu__active");
   burgerBtn.classList.toggle("burger__btn-active");
   body.classList.toggle("no-scroll");
-  body.style.paddingRight = paddingOffset + "px";
+  if (body.classList.contains('no-scroll')){
+    body.style.paddingRight = paddingOffset + "px";
+  } else{
+    body.style.paddingRight = 0;
+  }
 }
 function close(e) {
   if (e.target.matches('a')) {
     sideBar.classList.remove("menu__active");
     burgerBtn.classList.remove("burger__btn-active");
     body.classList.remove("no-scroll");
+    body.style.paddingRight = 0;
   }
 }
 
@@ -26,9 +31,41 @@ function close(e) {
 $(document).ready(function () {
   $('.social__slider').slick({
     autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
+    autoplaySpeed: 3000,
     dots: true,
+    arrows: true,
+    slidesToShow: 4,
+    centerMode: true,
+    responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        arrows: false
+      }
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        arrows: false
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        centerMode: false,
+        arrows: false
+      }
+    },
+    {
+      breakpoint: 425,
+      settings: {
+        slidesToShow: 1,
+        arrows: false
+      }
+    }
+  ]
   });
 });
 
